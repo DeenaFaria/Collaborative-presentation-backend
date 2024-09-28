@@ -4,12 +4,20 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+const allowedOrigins = ['https://presentation-frontend-gamma.vercel.app'];
+
+// CORS Middleware
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true, // Include credentials in CORS requests
+}));
+
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'https://presentation-frontend-gamma.vercel.app/', // Your React frontend URL
+        origin: allowedOrigins,
         methods: ['GET', 'POST'],
+        credentials: true,
     },
 });
 
