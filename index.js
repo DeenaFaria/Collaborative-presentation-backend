@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT
-const allowedOrigins = ['https://presentation-frontend-gamma.vercel.app/', 'https://collaborative-presentation-backend-1.onrender.com'];
+const allowedOrigins = ['https://presentation-frontend-gamma.vercel.app', 'https://collaborative-presentation-backend-1.onrender.com'];
 
 app.use(cors({
     origin: allowedOrigins,
