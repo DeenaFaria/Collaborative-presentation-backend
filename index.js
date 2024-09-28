@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT
-const allowedOrigins = ['https://presentation-frontend-gamma.vercel.app'];
+const allowedOrigins = ['*'];
 
 // CORS Middleware
 app.use(cors({
