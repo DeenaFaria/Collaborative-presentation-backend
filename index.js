@@ -5,15 +5,13 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT
-const allowedOrigins = ['*'];
+const allowedOrigins = ['https://presentation-frontend-gamma.vercel.app/', 'https://collaborative-presentation-backend-1.onrender.com'];
 
-// CORS Middleware
 app.use(cors({
     origin: allowedOrigins,
-    credentials: true, // Include credentials in CORS requests
+    credentials: true,
 }));
 
-const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         origin: allowedOrigins,
@@ -21,6 +19,7 @@ const io = new Server(server, {
         credentials: true,
     },
 });
+
 
 let presentations = {}; // Store all presentations
 
