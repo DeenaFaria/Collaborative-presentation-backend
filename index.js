@@ -4,14 +4,19 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000;
 const allowedOrigins = ['https://presentation-frontend-gamma.vercel.app', 'https://collaborative-presentation-backend-1.onrender.com'];
 
+// CORS Middleware
 app.use(cors({
     origin: allowedOrigins,
     credentials: true,
 }));
 
+// Create HTTP server using the Express app
+const server = http.createServer(app); // Define the 'server' here
+
+// Set up Socket.io server
 const io = new Server(server, {
     cors: {
         origin: allowedOrigins,
@@ -19,6 +24,7 @@ const io = new Server(server, {
         credentials: true,
     },
 });
+
 
 
 let presentations = {}; // Store all presentations
