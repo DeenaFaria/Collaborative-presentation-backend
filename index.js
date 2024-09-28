@@ -8,7 +8,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:3000', // Your React frontend URL
+        origin: 'https://presentation-frontend-gamma.vercel.app/', // Your React frontend URL
         methods: ['GET', 'POST'],
     },
 });
