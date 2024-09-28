@@ -4,6 +4,7 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 
 const app = express();
+const PORT = process.env.PORT
 const allowedOrigins = ['https://presentation-frontend-gamma.vercel.app'];
 
 // CORS Middleware
@@ -141,6 +142,6 @@ socket.on('get_presentations', () => {
     });
 });
 
-server.listen(3001, () => {
-    console.log('Server running on http://localhost:3001');
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
