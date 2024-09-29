@@ -20,6 +20,7 @@ const io = new Server(server, {
         credentials: true,
     },
 });
+
 let presentations = {}; // Store all presentations
 
 // Helper function to create a blank slide
